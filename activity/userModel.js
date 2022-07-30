@@ -6,7 +6,7 @@
 const mongoose = require('mongoose'); //npm i mongoose
 // db server link -> mongodb atlas ka link
 let dblink =
-    "mongodb+srv://admin:BohYctQDD0twhLoA@cluster0.ufy4c.mongodb.net/?retryWrites=true&w=majority";
+    "mongodb+srv://Rajneesh:6XhLXObceQdftEK0@freecluster.83r7lqj.mongodb.net/?retryWrites=true&w=majority";
 // db  server connect -> mongodbAtlas connect 
 mongoose
     .connect(dblink)
@@ -71,9 +71,10 @@ let userSchema = new mongoose.Schema({
 // address
 // ?? -> ??
 // model is similar to your collection 
-// const FooduserModel = mongoose.model
-//     // name of the collection, the set of rules this collection should follow
-//     ('FooduserModel', userSchema);
-// module.exports = FooduserModel;
-const UserModel = mongoose.model('FoodeuserModel', userSchema)
-module.exports = UserModel
+const FooduserModel = mongoose.model
+    // name of the collection, the set of rules this collection should follow
+    ('FooduserModel', userSchema);
+module.exports = FooduserModel;
+// const UserModel = mongoose.model('FoodeuserModel', userSchema)
+// module.exports = UserModel
+
