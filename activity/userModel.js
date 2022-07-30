@@ -1,4 +1,3 @@
-
 //tech knowledge  
 // (schema) -> set of features and rules a certain entity should 
 // follow
@@ -6,7 +5,8 @@
 // connect to my app // mongoose 
 const mongoose = require('mongoose'); //npm i mongoose
 // db server link -> mongodb atlas ka link
-let dblink = "mongodb+srv://Rajneesh:Mongodb%4012345@freecluster.83r7lqj.mongodb.net/?retryWrites=true&w=majority";
+let dblink =
+    "mongodb+srv://admin:BohYctQDD0twhLoA@cluster0.ufy4c.mongodb.net/?retryWrites=true&w=majority";
 // db  server connect -> mongodbAtlas connect 
 mongoose
     .connect(dblink)
@@ -33,7 +33,7 @@ let userSchema = new mongoose.Schema({
         validate: {
             validator: function () {
                 // this referes to the current entry 
-                    return this.password==this.confirmPassword;
+                return this.password == this.confirmPassword;
             },
             //    error message
             message: "password miss match"
@@ -47,17 +47,16 @@ let userSchema = new mongoose.Schema({
     phonenumber: {
         type: String,
         minLength: [10, "less then 10 numbers"],
-        maxLength: 10
+        maxLength: [10, "more then 10 numbers"]
     },
     pic: {
         type: String,
         default: "dp.png",
 
-    }, 
-    // days: {
-    //     type: String,
-    //     enum: ["Mon", "Tue", "Wed"]
-    // },
+    },
+    otp: {
+        type: String
+    },
     address: {
         type: String,
     }
@@ -72,7 +71,9 @@ let userSchema = new mongoose.Schema({
 // address
 // ?? -> ??
 // model is similar to your collection 
-const FooduserModel = mongoose.model
-    // name of the collection, the set of rules this collection should follow
-('FooduserModel', userSchema);
-module.exports = FooduserModel;
+// const FooduserModel = mongoose.model
+//     // name of the collection, the set of rules this collection should follow
+//     ('FooduserModel', userSchema);
+// module.exports = FooduserModel;
+const UserModel = mongoose.model('FoodeuserModel', userSchema)
+module.exports = UserModel
